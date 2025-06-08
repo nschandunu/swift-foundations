@@ -1,0 +1,7 @@
+# Xcode user state files
+*.xcuserstate
+
+# Other common Xcode noise
+*.xcuserdata/
+*.xcworkspace/
+DerivedData/
