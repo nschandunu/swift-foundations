@@ -10,7 +10,11 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
+            Color.yellow
+                .frame(width: 30, height: 30)
+                .clipShape(Circle())
             Text("Mon")
+                .shadow(radius: 2)
             Image(systemName: "cloud.sun.fill")
             Text("High:70°")
             Text("Low:50°")
