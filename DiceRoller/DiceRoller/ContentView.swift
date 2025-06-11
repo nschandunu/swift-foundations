@@ -40,7 +40,9 @@ struct ContentView: View {
                 .font(.title)
         }
         .padding()
-        
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(.appBackground)
+        .tint(.white)
     }
 }
 
