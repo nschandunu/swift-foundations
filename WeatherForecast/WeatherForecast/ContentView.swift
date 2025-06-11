@@ -11,25 +11,9 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         HStack {
-            VStack {
-                Text("Mon")
-                Image(systemName: "sun.max.fill")
-                    .imageScale(.large)
-                    .foregroundStyle(.yellow)
-                Text("High: 70°")
-                Text("Low: 50°")
-            }
-            .padding()
-            
-            VStack {
-                Text("Tue")
-                Image(systemName: "cloud.rain.fill")
-                    .imageScale(.large)
-                    .foregroundStyle(.blue)
-                Text("High: 60°")
-                Text("Low: 40°")
-            }
-            .padding()
+            DayForcast(day: "Mon" , high: 70 , low: 50)
+            DayForcast(day: "Tue" , high: 80 , low: 40)
+            DayForcast(day: "Wed" , high: 60 , low: 55)
         }
     }
 }
@@ -38,3 +22,19 @@ struct ContentView: View {
     ContentView()
 }
                 
+
+struct DayForcast: View {
+    let day: String
+    let high,low: Int
+    var body: some View {
+        VStack {
+            Text(day)
+            Image(systemName: "sun.max.fill")
+                .imageScale(.large)
+                .foregroundStyle(.yellow)
+            Text("High: \(high)°")
+            Text("Low: \(low)°")
+        }
+        .padding()
+    }
+}
