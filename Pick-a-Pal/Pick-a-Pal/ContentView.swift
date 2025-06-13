@@ -16,13 +16,14 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Text(pickedName.isEmpty ? " " : pickedName)
-
+            
             List {
                 ForEach(names, id: \.description) { name in
                     Text(name)
                     
                 }
             }
+            
             TextField("Add Name", text: $nameToAdd)
                 .autocorrectionDisabled()
                 .onSubmit {
@@ -31,13 +32,15 @@ struct ContentView: View {
                         nameToAdd = ""
                     }
                 }
+            
             Divider()
             
             Toggle("Remove when picked", isOn: $shouldRemovePickedName)
             
-            Button("Pick Random Name") {
+            Button {
                 if let randomName = names.randomElement() {
                     pickedName = randomName
+                    
                     if shouldRemovePickedName {
                         names.removeAll { name in
                             return (name == randomName)
@@ -46,12 +49,19 @@ struct ContentView: View {
                 } else {
                     pickedName = ""
                 }
+            } label: {
+                Text("Pick Random Name")
+                    .padding(.vertical, 8)
+                    .padding(.horizontal, 16)
             }
+            .buttonStyle(.borderedProminent)
+            .font(.title2)
         }
         .padding()
     }
 }
+    
+    #Preview {
+        ContentView()
+    }
 
-#Preview {
-    ContentView()
-}
