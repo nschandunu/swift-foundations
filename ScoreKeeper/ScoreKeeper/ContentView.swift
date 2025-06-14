@@ -19,7 +19,9 @@ struct ContentView: View {
             }
             Button("Add Player", systemImage: "plus") {
                 players.append("")
+                scores.append(0)
             }
+            Spacer()
         }
         .padding()
     }
