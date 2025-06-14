@@ -16,7 +16,7 @@ struct Scoreboard {
     
     var state = GameState.setup
     
-    mutating func resetScore(to newValue: Int) {
+    mutating func resetScores(to newValue: Int) {
         
     }
         

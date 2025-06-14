@@ -47,7 +47,7 @@ struct ContentView: View {
             case .setup:
                 Button("Start Game", systemImage: "play.fill") {
                     scoreboard.state = .playing
-                    scoreboard.resetScore(to: startingPoints)
+                    scoreboard.resetScores(to: startingPoints)
                 }
             case .playing:
                 Button("End Game", systemImage: "stop.fill") {
