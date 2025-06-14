@@ -10,17 +10,17 @@ import Testing
 
 struct ScoreKeeperTests {
 
-    @Test("Reset player scores")
-        func resetScores() async throws {
+    @Test("Reset player scores", arguments: [0, 10, 20])
+        func resetScores(to newValue: Int) async throws {
             var scoreboard = Scoreboard(players: [
                         Player(name: "Elisha", score: 0),
                         Player(name: "Andre", score: 5),
             ])
-            scoreboard.resetScores(to: 0)
+            scoreboard.resetScores(to: newValue)
 
 
             for player in scoreboard.players {
-                #expect(player.score == 0)
+                #expect(player.score == newValue)
             }
     }
 
