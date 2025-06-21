@@ -22,17 +22,17 @@ class Movie {
     
     
     static let sampleData = [
-        Movie(title: "Amusing Space Traveler 3",
+        Movie(title: "The Batman 2022",
               releaseDate: Date(timeIntervalSinceReferenceDate: -402_000_000)),
-        Movie(title: "Difficult Cat",
+        Movie(title: "Intesteller",
               releaseDate: Date(timeIntervalSinceReferenceDate: -20_000_000)),
-        Movie(title: "Electrifying Trek",
+        Movie(title: "Avatar",
               releaseDate: Date(timeIntervalSinceReferenceDate: 300_000_000)),
-        Movie(title: "Reckless Train Ride 2",
+        Movie(title: "Openheimer",
               releaseDate: Date(timeIntervalSinceReferenceDate: 120_000_000)),
-        Movie(title: "The Last Venture",
+        Movie(title: "Load of the Rings",
               releaseDate: Date(timeIntervalSinceReferenceDate: 550_000_000)),
-        Movie(title: "Glamorous Neighbor",
+        Movie(title: "The Hangover",
               releaseDate: Date(timeIntervalSinceReferenceDate: -1_700_000_000)),
     ]
 }
