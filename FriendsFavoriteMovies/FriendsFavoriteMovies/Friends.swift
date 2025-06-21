@@ -17,10 +17,10 @@ class Friend {
     }
     
     static let sampleData = [
-            Friend(name: "Elena"),
-            Friend(name: "Graham"),
-            Friend(name: "Mayuri"),
-            Friend(name: "Rich"),
-            Friend(name: "Rody"),
+            Friend(name: "Kasun"),
+            Friend(name: "Nimal"),
+            Friend(name: "Sunil"),
+            Friend(name: "Dinesh"),
+            Friend(name: "Saman"),
         ]
 }
