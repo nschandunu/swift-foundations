@@ -13,7 +13,10 @@ struct FriendDetail: View {
 
 
     var body: some View {
-        Text("Hello, World!")
+        Form{
+            TextField("Name", text: $friend.name)
+                .autocorrectionDisabled()
+        }
     }
 }
 
