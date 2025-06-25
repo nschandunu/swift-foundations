@@ -20,17 +20,27 @@ struct FriendList: View {
                 ForEach(friends) { friend in
                     NavigationLink(friend.name) {
                         FriendDetail(friend: friend)
-
-
                     }
                 }
             }
             .navigationTitle("Friends")
+            .toolbar {
+                ToolbarItem{
+                    Button("Add friend", systemImage: "plus", action: addFriend)
+                }
+
+
+            }
         } detail: {
             Text("Select a friend")
                 .navigationTitle("Friend")
                 .navigationBarTitleDisplayMode(.inline)
         }
+    }
+
+
+    private func addFriend() {
+        context.insert(Friend(name: "New friend"))
     }
 }
 
