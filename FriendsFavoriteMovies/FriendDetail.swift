@@ -10,9 +10,15 @@ import SwiftUI
 
 struct FriendDetail: View {
     @Bindable var friend: Friend
+    let isNew: Bool
     
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var context
+    
+    init(friend: Friend, isNew: Bool = false) {
+        self.friend = friend
+        self.isNew = isNew
+    }
 
 
     var body: some View {
@@ -20,18 +26,20 @@ struct FriendDetail: View {
             TextField("Name", text: $friend.name)
                 .autocorrectionDisabled()
         }
-        .navigationTitle("Friend")
+        .navigationTitle(isNew ? "New Friend" : "Friend")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-            ToolbarItem(placement: .confirmationAction) {
-                Button("Save") {
-                    dismiss()
+            if isNew {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Save") {
+                        dismiss()
+                    }
                 }
-            }
-            ToolbarItem(placement: .cancellationAction) {
-                Button("Cancel") {
-                    context.delete(friend)
-                    dismiss()
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel") {
+                        context.delete(friend)
+                        dismiss()
+                    }
                 }
             }
         }
