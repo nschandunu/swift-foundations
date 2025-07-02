@@ -19,7 +19,7 @@ struct MovieList: View {
 
 
     var body: some View {
-        NavigationSplitView {
+
             List {
                 ForEach(movies) { movie in
                     NavigationLink(movie.title) {
@@ -43,11 +43,7 @@ struct MovieList: View {
                 }
                 .interactiveDismissDisabled()
             }
-        } detail: {
-            Text("Select a movie")
-                .navigationTitle("Movie")
-                .navigationBarTitleDisplayMode(.inline)
-        }
+        
     }
 
 
@@ -67,12 +63,16 @@ struct MovieList: View {
 
 
 #Preview {
-    MovieList()
-        .modelContainer(SampleData.shared.modelContainer)
+    NavigationStack {
+        MovieList()
+            .modelContainer(SampleData.shared.modelContainer)
+    }
 }
 
 
 #Preview("Filtered") {
-    MovieList(titleFilter: "tr")
-        .modelContainer(SampleData.shared.modelContainer)
+    NavigationStack {
+        MovieList(titleFilter: "tr")
+            .modelContainer(SampleData.shared.modelContainer)
+    }
 }
