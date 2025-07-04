@@ -1,11 +1,14 @@
 import SwiftUI
 
+
 struct WordCanvas: View {
     @Environment(Alphabetizer.self) private var alphabetizer
-    
+
+
     private var tiles: [Tile] {
         alphabetizer.tiles
     }
+
 
     var body: some View {
         ZStack {
@@ -32,10 +35,12 @@ struct WordCanvas: View {
     }
 }
 
+
 #Preview {
     WordCanvas()
         .environment(Alphabetizer())
 }
+
 
 extension WordCanvas {
     private func setInitialTilePositions() {
@@ -45,17 +50,20 @@ extension WordCanvas {
             let midpoint = Double(tiles.count - 1) / 2.0
             let position = Double(index) - midpoint
 
+
             tiles[index].position.x = (Tile.size + Tile.spacing) * position
             tiles[index].position.y = Tile.halfSize
         }
     }
 }
 
+
 extension Tile {
     static let placeholderSize = size - 20.0
     static let size = 200.0
     static let halfSize = 100.0
     static let spacing = 50.0
+
 
     // Drag from the center of the tile instead of the default top left
     var centeredOffset: CGSize {

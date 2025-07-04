@@ -14,7 +14,6 @@ class Alphabetizer {
     
     var tiles = [Tile]()
     var score = 0
-    
     init(vocab: Vocabulary = .oceanAnimals) {
         self.vocab = vocab
         startNewGame()

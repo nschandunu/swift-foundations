@@ -1,9 +1,12 @@
 import SwiftUI
 
+
 struct TileView: View {
     var tile: Tile
 
+
     private let borderWidth = 5.0
+
 
     var body: some View {
         VStack {
@@ -25,7 +28,10 @@ struct TileView: View {
         .clipShape(RoundedRectangle(cornerRadius: 16))
         .rotation3DEffect(.degrees(tile.flipped ? 180 : 0), axis: (x: 0, y: 1, z: 0))
         .animation(.default, value: tile.flipped)
+
+
     }
+
 
     func borderStyle() -> some ShapeStyle {
         return LinearGradient(colors: [
@@ -34,6 +40,7 @@ struct TileView: View {
         ], startPoint: .topLeading, endPoint: .bottomTrailing)
     }
 }
+
 
 #Preview {
     let tile = Tile(word: "Bear")
